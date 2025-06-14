@@ -1,0 +1,109 @@
+@import "tailwindcss";
+html{
+  overflow-x: hidden;
+}
+  /* body{
+    scroll-behavior: smooth;
+  } */
+@font-face {
+  font-family: "Poppins";
+  src: url("/assets/styles/fonts/Poppins-Regular.ttf");
+}
+@font-face {
+    font-family: 'Work Sans';
+    src: url('/assets/styles/fonts/WorkSans-Regular.ttf');
+}
+@font-face {
+    font-family:'Metrophobic' ;
+    src: url('/assets/styles/fonts/Metrophobic-Regular.ttf');
+}
+.poppins-500 {
+  font-family: "Poppins";
+  font-weight: 500;
+}
+.poppins-700 {
+  font-family: "Poppins";
+  font-weight: 700;
+}
+.work-sans-400{
+    font-family: 'Work Sans';
+    font-weight: 400;
+}
+.work-sans-500{
+    font-family: 'Work Sans';
+    font-weight: 500;
+}
+.metrophobic-400{
+    font-family: 'Metrophobic';
+    font-weight: 400;
+}
+
+.top-banner-bg {
+  background-image: url("/assets/images/hero-banner-bg.webp");
+  background-size: cover;
+  background-position: top center;
+  height: 100vh;
+  min-height: 700px;
+}
+.card-bg{
+    background-image: url('/assets/images/coops-development-bg.webp');
+    background-size: cover;
+}
+.mission-top{
+    background-image: url('/assets/images/missiontop-bg.webp');
+    background-size: cover;
+}
+.video-default{
+    background-image: url('/assets/images/video-template-default.png');
+    background-size:contain;
+}
+.portfoliosection-bg{
+    background-image: url('/assets/images/portfoliosection-bg.jpg');
+    background-size: cover;
+}
+p{
+  font-size: 14px;
+  font-family: 'Work Sans';
+  font-weight: 400;
+}
+
+@media screen and (max-width:767px) {
+  .top-banner-bg {
+    background-image: url("/assets/images/hero-banner-mobile.webp");
+    background-size: cover;
+    background-position:top center;
+    height: auto;
+    min-height: 500px;
+  }
+  .card-bg{
+    background-image: url('/assets/images/mobile-development-bg.webp');
+    background-size: cover;
+}
+  .mission-top{
+    background-image: url('/assets/images/missiontop-bg.webp');
+    background-size: cover;
+}
+  .video-default{
+    background-image: url('/assets/images/video-template-default.png');
+    background-size: contain;
+}
+  .portfoliosection-bg{
+    background-image: url('/assets/images/portfoliosection-bg.jpg');
+    background-size: cover;
+}
+  p{
+    font-size: 10px;
+    font-family: 'Work Sans';
+    font-weight: 400;
+    line-height: 18px;
+  }
+  
+}
+@media screen and (min-width:768px) and (max-width:1023px) {
+  p{
+    font-size: 14px;
+    font-family: 'Work Sans';
+    font-weight: 400;
+    line-height: 24px;
+  }
+}
