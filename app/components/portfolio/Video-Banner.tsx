@@ -2,8 +2,8 @@
 import { useState } from "react";
 
 interface Props {
-video_url?:string;
-banner?:string;
+video_url?:string | undefined;
+banner?:string | undefined;
 }
 function VideoBanner({video_url,banner}:Props) {
   const [isPlaying, setIsPlaying] = useState(false);
