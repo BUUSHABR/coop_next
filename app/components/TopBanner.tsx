@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const TopBanner: React.FC = () => {
@@ -32,18 +33,20 @@ const TopBanner: React.FC = () => {
           and connect people across the globe.
         </p>
         <div className="flex flex-col lg:flex-row gap-2 md:gap-4 lg:gap-8 mt-4 md:mt-6 work-sans-400">
-          <div
-            className="rounded-full w-[150px] lg:w-[170px] text-center bg-[#FCB545] text-[#8C623E] text-xs lg:text-base px-8 py-3 cursor-pointer"
-            data-aos="fade-right"
-          >
-            Explore Now
-          </div>
-          <div
+          <Link href="/company">
+            <div
+              className="rounded-full w-[150px] lg:w-[170px] text-center bg-[#FCB545] text-[#8C623E] text-xs lg:text-base px-8 py-3 cursor-pointer"
+              data-aos="fade-right"
+            >
+              Explore Now
+            </div>
+          </Link>
+          {/* <div
             className="bg-[#253D82]  w-[150px] lg:w-[170px] text-center text-[#A8B0CA] text-xs lg:text-base rounded-[14px]  px-8 py-3 cursor-pointer"
             data-aos="fade-right"
           >
             Learn More
-          </div>
+          </div> */}-
         </div>
       </div>
     </div>

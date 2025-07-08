@@ -1,4 +1,5 @@
 'use client'
+import { usePathname, useRouter } from "next/navigation";
 import React, { useState, useEffect } from "react";
 
 const MenuIcon = () => (
@@ -38,7 +39,8 @@ const CloseIcon = () => (
 const Header: React.FC = () => {
   // const [isScrolled, setIsScrolled] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-
+  const router = useRouter();
+  const pathname = usePathname();
   // useEffect(() => {
   //   const handleScroll = () => {
   //     setIsScrolled(window.scrollY > 20);
@@ -46,12 +48,19 @@ const Header: React.FC = () => {
   //   window.addEventListener("scroll", handleScroll);
   //   return () => window.removeEventListener("scroll", handleScroll);
   // }, []);
-
   const scrollToSection = (e: any, id: string) => {
     e.preventDefault();
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-    setIsSidebarOpen(false);
+
+    if (pathname !== '/') {
+      // navigate to homepage with hash
+      router.push(`/#${id}`);
+    } else {
+      // just scroll if already on home
+      document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+      setIsSidebarOpen(false);
+    }
   };
+
   useEffect(() => {
     if (isSidebarOpen) {
       document.documentElement.style.overflow = "hidden";
@@ -79,7 +88,6 @@ const Header: React.FC = () => {
             {["home", "about", "we-do", "contact"].map((item) => (
               <a
                 key={item}
-                href={`#${item}`}
                 onClick={(e) => scrollToSection(e, item)}
               >
                 <div
@@ -88,7 +96,7 @@ const Header: React.FC = () => {
                 >
                   {item.charAt(0).toUpperCase() + item.slice(1)}
                 </div>
-              </a>
+              </a> 
             ))}
           </div>
         </div>
@@ -129,8 +137,8 @@ const Header: React.FC = () => {
           {["home", "about", "we-do", "contact"].map((item) => (
             <a
               key={item}
-              href={`#${item}`}
-              onClick={(e) => scrollToSection(e, item)}
+              
+              onClick={(e) => scrollToSection(e, item)} 
             >
               <div
                 className="text-[16px] cursor-pointer text-white border-b-[1px] border-gray-700 px-4 pt-4 pb-2"

@@ -29,30 +29,31 @@ const Portfolio: React.FC<Props> = ({ data }) => {
           <div>
             <h1 className="capitalize text-[#FFFFFF] text-[2.875rem] metrophobic-400">Portfolio</h1>
             <p className="text-[#FFFFFF] text-[1.5rem] leading-[35px] work-sans-400">
-              At Coop Games, we take pride in our diverse portfolio that showcases our expertise across various platforms and technologies. 
-              Whether it’s building captivating games, developing seamless Web3 applications, or crafting robust software solutions, 
+              At Coop Games, we take pride in our diverse portfolio that showcases our expertise across various platforms and technologies.
+              Whether it’s building captivating games, developing seamless Web3 applications, or crafting robust software solutions,
               we deliver excellence with every project. Below are some highlights of our past work:
             </p>
           </div>
         </div>
       </div>
 
-      {/* Category Filter Pills */}
-      <div className="flex flex-wrap gap-20 mt-10 justify-center">
-        {categories.map((category) => (
+      <div className="flex flex-wrap gap-10 mt-10 justify-center">
+        {categories && categories.map((category) => (
           <button
             key={category}
             onClick={() => setSelectedCategory(category)}
-            className={`px-4 py-2 rounded-full border transition duration-300 ${
-              selectedCategory === category
-                ? "bg-white text-[#09132D] font-semibold"
-                : "bg-transparent border-white text-white"
-            }`}
+            className={`relative text-lg transition-all duration-300 hover:text-[#FB883D] focus:outline-none ${selectedCategory === category ? " text-[#FB883D] font-semibold" : "text-white opacity-70"
+              }`}
           >
             {category}
+            <span
+              className={`absolute left-0 bottom-[-4px] h-[2px] w-full transition-all duration-300 ${selectedCategory === category ? "  bg-[#FB883D] opacity-100 scale-x-100" : "opacity-0 scale-x-0"
+                }`}
+            />
           </button>
         ))}
       </div>
+
 
       {/* Portfolio Items */}
       <div className="mt-[4rem]">
@@ -60,8 +61,11 @@ const Portfolio: React.FC<Props> = ({ data }) => {
           {filteredData.length > 0 ? (
             filteredData.map((item) => <Card key={item._id} item={item} />)
           ) : (
-            <p className="text-white col-span-3">No projects found in this category.</p>
-          )}
+            <div className="col-span-3 flex justify-center items-center py-10">
+              <p className="text-[#FB883D] text-lg font-semibold text-center">
+                No projects found in this category.
+              </p>
+            </div>)}
         </div>
       </div>
     </div>
