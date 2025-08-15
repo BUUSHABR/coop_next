@@ -9,7 +9,7 @@ const TopBanner : React.FC = () => {
         <div className="">
             <div className="">
                 {/* banner image container */}
-                <img src="/assets/images/coop-company-banner-mobile.png" alt="company-banner-mobile" className="block md:hidden w-full"/>
+                <img src="/assets/images/coop-company-banner-mobile-small.png" alt="company-banner-mobile" className="block md:hidden w-full"/>
                 <img src="/assets/images/coop-company-banner.png" alt="company-banner-desktop" className="hidden md:block" />
             </div>
         </div>
